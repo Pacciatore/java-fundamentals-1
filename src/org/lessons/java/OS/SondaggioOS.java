@@ -11,6 +11,8 @@ public class SondaggioOS {
 		short linuxCounter = 0;
 		short otherCounter = 0;
 
+		short totalStudents = 0;
+
 		Scanner s = new Scanner(System.in);
 
 		System.out.println("Quanti studenti utilizzano MacOS? (Inserire numero)");
@@ -27,9 +29,17 @@ public class SondaggioOS {
 
 		s.close();
 
+		totalStudents = (short) (linuxCounter + macCounter + otherCounter + windowsCounter);
+
+		double macPercentage = 0D;
+		double windowsPercentage = 0D;
+		double linuxPercentage = 0D;
+		double otherPercentage = 0D;
+
 		System.out.println("------------------------------");
 		System.out.println("Risultato sondaggio: ");
 
+		System.out.println("Totale studenti: " + totalStudents);
 		System.out.println("MacOS: " + macCounter);
 		System.out.println("Windows: " + windowsCounter);
 		System.out.println("Linux: " + linuxCounter);
