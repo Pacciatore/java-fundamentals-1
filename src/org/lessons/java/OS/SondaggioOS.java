@@ -1,10 +1,15 @@
 package org.lessons.java.OS;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class SondaggioOS {
 
 	public static void main(String[] args) {
+
+		DecimalFormat df = new DecimalFormat("0.00");
+		df.setRoundingMode(RoundingMode.CEILING);
 
 		short macCounter = 0;
 		short windowsCounter = 0;
@@ -46,13 +51,13 @@ public class SondaggioOS {
 
 		System.out.println("Totale studenti: " + totalStudents);
 		System.out.print("MacOS: " + macCounter);
-		System.out.println(" | Percentuale: " + ((float) macPercentage) * 100 + "%");
+		System.out.println(" | Percentuale: " + df.format(((float) macPercentage) * 100) + "%");
 		System.out.print("Windows: " + windowsCounter);
-		System.out.println(" | Percentuale: " + ((float) windowsPercentage) * 100 + "%");
+		System.out.println(" | Percentuale: " + df.format(((float) windowsPercentage) * 100) + "%");
 		System.out.print("Linux: " + linuxCounter);
-		System.out.println(" | Percentuale: " + ((float) linuxPercentage) * 100 + "%");
+		System.out.println(" | Percentuale: " + df.format(((float) linuxPercentage) * 100) + "%");
 		System.out.print("Altro: " + otherCounter);
-		System.out.println(" | Percentuale: " + ((float) otherPercentage) * 100 + "%");
+		System.out.println(" | Percentuale: " + df.format(((float) otherPercentage) * 100) + "%");
 
 	}
 
