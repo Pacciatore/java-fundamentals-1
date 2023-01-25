@@ -12,6 +12,7 @@ public class PasswordGenerator {
 		byte birthDay = 0;
 		byte birthMonth = 0;
 		short birthYear = 0;
+		short passwordNumber = 0;
 		Scanner s = new Scanner(System.in);
 
 		System.out.println("Benvenuto nel generatore di password!");
@@ -36,6 +37,8 @@ public class PasswordGenerator {
 
 		s.close();
 
+		passwordNumber = (short) ((short) birthDay + (short) birthMonth + birthYear);
+
 		System.out.println("----------------------------");
 		System.out.println("Riepilogo informazioni");
 
@@ -43,6 +46,8 @@ public class PasswordGenerator {
 		System.out.println("Cognome: " + surname);
 		System.out.println("Colore preferito: " + color);
 		System.out.println("Data di nascita: " + birthDay + "/" + birthMonth + "/" + birthYear);
+
+		System.out.println("La tua password: " + name + "-" + surname + "-" + color + "-" + passwordNumber);
 
 	}
 
