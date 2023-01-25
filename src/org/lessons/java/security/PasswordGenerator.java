@@ -9,8 +9,8 @@ public class PasswordGenerator {
 		String name = "";
 		String surname = "";
 		String color = "";
-		byte birthDay = 0;
-		byte birthMonth = 0;
+		short birthDay = 0;
+		short birthMonth = 0;
 		short birthYear = 0;
 		short passwordNumber = 0;
 		Scanner s = new Scanner(System.in);
@@ -27,17 +27,17 @@ public class PasswordGenerator {
 		color = s.nextLine();
 
 		System.out.println("Inserire giorno di nascita: ");
-		birthDay = s.nextByte();
+		birthDay = s.nextShort();
 
 		System.out.println("Inserire mese di nascita: ");
-		birthMonth = s.nextByte();
+		birthMonth = s.nextShort();
 
 		System.out.println("Inserire anno di nascita: ");
 		birthYear = s.nextShort();
 
 		s.close();
 
-		passwordNumber = (short) ((short) birthDay + (short) birthMonth + birthYear);
+		passwordNumber = (short) (birthDay + birthMonth + birthYear);
 
 		System.out.println("----------------------------");
 		System.out.println("Riepilogo informazioni");
