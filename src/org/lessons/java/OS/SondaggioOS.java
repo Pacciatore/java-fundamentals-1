@@ -36,14 +36,23 @@ public class SondaggioOS {
 		double linuxPercentage = 0D;
 		double otherPercentage = 0D;
 
+		macPercentage = (double) macCounter / (double) totalStudents;
+		windowsPercentage = (double) windowsCounter / (double) totalStudents;
+		linuxPercentage = (double) linuxCounter / (double) totalStudents;
+		otherPercentage = (double) otherCounter / (double) totalStudents;
+
 		System.out.println("------------------------------");
 		System.out.println("Risultato sondaggio: ");
 
 		System.out.println("Totale studenti: " + totalStudents);
-		System.out.println("MacOS: " + macCounter);
-		System.out.println("Windows: " + windowsCounter);
-		System.out.println("Linux: " + linuxCounter);
-		System.out.println("Altro: " + otherCounter);
+		System.out.print("MacOS: " + macCounter);
+		System.out.println(" | Percentuale: " + ((float) macPercentage) * 100 + "%");
+		System.out.print("Windows: " + windowsCounter);
+		System.out.println(" | Percentuale: " + ((float) windowsPercentage) * 100 + "%");
+		System.out.print("Linux: " + linuxCounter);
+		System.out.println(" | Percentuale: " + ((float) linuxPercentage) * 100 + "%");
+		System.out.print("Altro: " + otherCounter);
+		System.out.println(" | Percentuale: " + ((float) otherPercentage) * 100 + "%");
 
 	}
 
