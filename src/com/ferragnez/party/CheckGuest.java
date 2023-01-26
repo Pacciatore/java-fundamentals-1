@@ -17,8 +17,10 @@ public class CheckGuest {
 
 		Scanner s = new Scanner(System.in);
 
-		System.out.println("Come ti chiami?");
-		name = s.nextLine().trim();
+		do {
+			System.out.println("Come ti chiami?");
+			name = s.nextLine().trim();
+		} while (name.length() < 1);
 
 		s.close();
 
