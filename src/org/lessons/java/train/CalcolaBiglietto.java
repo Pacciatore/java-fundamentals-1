@@ -33,6 +33,17 @@ public class CalcolaBiglietto {
 
 		s.close();
 
+		ticketTotal = ticketCost * kmToTravel;
+
+		if (passengerAge < juniorAgeUpperLimit) {
+			ticketTotal -= ticketTotal * juniorDiscount;
+		} else if (passengerAge > seniorAge) {
+			ticketTotal -= ticketTotal * seniorDiscount;
+		}
+
+		System.out.println("-----------------------------");
+		System.out.println("Il costo del biglietto è di: " + ticketTotal + "€");
+
 	}
 
 }
