@@ -27,14 +27,14 @@ public class CheckGuest {
 		int i = 0;
 		do {
 
-			if (name.toLowerCase().equals(whiteList[i].toLowerCase()))
+			if (name.equalsIgnoreCase(whiteList[i]))
 				found = true;
 			i++;
 
 		} while (!found && i < whiteList.length);
 
 //		for (int i = 0; i < whiteList.length; i++) {
-//			if (name.toLowerCase().equals(whiteList[i].toLowerCase()))
+//			if (name.equalsIgnoreCase(whiteList[i]))
 //				found = true;
 //		}
 
