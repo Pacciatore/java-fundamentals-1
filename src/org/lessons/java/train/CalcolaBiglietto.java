@@ -1,5 +1,7 @@
 package org.lessons.java.train;
 
+import java.util.Scanner;
+
 public class CalcolaBiglietto {
 
 	public static void main(String[] args) {
@@ -15,6 +17,21 @@ public class CalcolaBiglietto {
 
 		float kmToTravel = 0f; // Variable
 		int passengerAge = 0; // Variable
+
+		System.out.println("Benvenuto nel tuo calcolatore di biglietti personale!");
+
+		Scanner s = new Scanner(System.in);
+
+		System.out.print("Inserire età del passeggero: ");
+		passengerAge = Integer.parseInt(s.nextLine());
+
+		System.out.print("Inserire distanza da percorrere in km (usare il punto come separatore decimale): ");
+		kmToTravel = Float.parseFloat(s.nextLine());
+
+		System.out.println("Età del passegero: " + passengerAge);
+		System.out.println("Distanza da percorrere: " + kmToTravel + "km");
+
+		s.close();
 
 	}
 
