@@ -4,16 +4,17 @@ import java.util.Scanner;
 
 public class CalcolaBiglietto {
 
+	static final float TICKET_COST = 0.21f;
+
+	static final float JUNIOR_DISCOUNT = 0.2f;
+	static final float SENIOR_DISCOUNT = 0.4f;
+
+	static final int JUNIOR_AGE_UPPER_LIMIT = 18;
+	static final int SENIOR_AGE = 65;
+
 	public static void main(String[] args) {
 
-		float ticketCost = 0.21f; // Constant
 		float ticketTotal = 0f; // Variable
-
-		float juniorDiscount = 0.2f; // Constant
-		float seniorDiscount = 0.4f; // Constant
-
-		int juniorAgeUpperLimit = 18; // Constant
-		int seniorAge = 65; // Constant
 
 		float kmToTravel = 0f; // Variable
 		int passengerAge = 0; // Variable
@@ -30,12 +31,12 @@ public class CalcolaBiglietto {
 
 		s.close();
 
-		ticketTotal = ticketCost * kmToTravel;
+		ticketTotal = TICKET_COST * kmToTravel;
 
-		if (passengerAge < juniorAgeUpperLimit) {
-			ticketTotal -= ticketTotal * juniorDiscount;
-		} else if (passengerAge > seniorAge) {
-			ticketTotal -= ticketTotal * seniorDiscount;
+		if (passengerAge < JUNIOR_AGE_UPPER_LIMIT) {
+			ticketTotal -= ticketTotal * JUNIOR_DISCOUNT;
+		} else if (passengerAge > SENIOR_AGE) {
+			ticketTotal -= ticketTotal * SENIOR_DISCOUNT;
 		}
 
 		System.out.println("");
@@ -43,11 +44,11 @@ public class CalcolaBiglietto {
 		System.out.println("Distanza da percorrere: " + kmToTravel + "km");
 		System.out.println("");
 
-		if (passengerAge < juniorAgeUpperLimit)
+		if (passengerAge < JUNIOR_AGE_UPPER_LIMIT)
 			System.out.println("Sconto per minorenni applicato!");
 
-		if (passengerAge > seniorAge)
-			System.out.println("Sconto per over " + seniorAge + " applicato!");
+		if (passengerAge > SENIOR_AGE)
+			System.out.println("Sconto per over " + SENIOR_AGE + " applicato!");
 
 		System.out.println("-----------------------------");
 		System.out.println("Il costo del biglietto è di: " + ticketTotal + "€");
