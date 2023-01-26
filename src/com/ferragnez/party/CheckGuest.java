@@ -24,10 +24,19 @@ public class CheckGuest {
 
 		s.close();
 
-		for (int i = 0; i < whiteList.length; i++) {
+		int i = 0;
+		do {
+
 			if (name.toLowerCase().equals(whiteList[i].toLowerCase()))
 				found = true;
-		}
+			i++;
+
+		} while (!found && i < whiteList.length);
+
+//		for (int i = 0; i < whiteList.length; i++) {
+//			if (name.toLowerCase().equals(whiteList[i].toLowerCase()))
+//				found = true;
+//		}
 
 		if (found)
 			System.out.println("Prego, puoi entrare.");
