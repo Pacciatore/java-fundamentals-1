@@ -28,9 +28,6 @@ public class CalcolaBiglietto {
 		System.out.print("Inserire distanza da percorrere in km (usare il punto come separatore decimale): ");
 		kmToTravel = Float.parseFloat(s.nextLine());
 
-		System.out.println("Età del passegero: " + passengerAge);
-		System.out.println("Distanza da percorrere: " + kmToTravel + "km");
-
 		s.close();
 
 		ticketTotal = ticketCost * kmToTravel;
@@ -40,6 +37,17 @@ public class CalcolaBiglietto {
 		} else if (passengerAge > seniorAge) {
 			ticketTotal -= ticketTotal * seniorDiscount;
 		}
+
+		System.out.println("");
+		System.out.println("Età del passegero: " + passengerAge);
+		System.out.println("Distanza da percorrere: " + kmToTravel + "km");
+		System.out.println("");
+
+		if (passengerAge < juniorAgeUpperLimit)
+			System.out.println("Sconto per minorenni applicato!");
+
+		if (passengerAge > seniorAge)
+			System.out.println("Sconto per over " + seniorAge + " applicato!");
 
 		System.out.println("-----------------------------");
 		System.out.println("Il costo del biglietto è di: " + ticketTotal + "€");
